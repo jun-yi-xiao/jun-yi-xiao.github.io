@@ -32,22 +32,25 @@
     var CONFIG = {"hostname":"cozyyy.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":100,"offset":20,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
   
-  <meta name="description" content="5555. Count Sorted Vowel Strings">
+  <meta name="description" content="5600. Kth Smallest Instructions">
 <meta property="og:type" content="article">
-<meta property="og:title" content="5555. Count Sorted Vowel Strings">
-<meta property="og:url" content="http://cozyyy.top/2020/11/01/5555-Count-Sorted-Vowel-Strings/index.html">
+<meta property="og:title" content="leetcode-5600. Kth Smallest Instructions">
+<meta property="og:url" content="http://cozyyy.top/2020/11/02/leetcode-5600-Kth-Smallest-Instructions/index.html">
 <meta property="og:site_name" content="Cozy&#39;  Blog">
-<meta property="og:description" content="5555. Count Sorted Vowel Strings">
+<meta property="og:description" content="5600. Kth Smallest Instructions">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-11-01T14:20:38.000Z">
-<meta property="article:modified_time" content="2020-11-02T04:10:35.406Z">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/12/ex1.png">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/12/ex2.png">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2020/10/12/ex3.png">
+<meta property="article:published_time" content="2020-11-02T09:50:51.000Z">
+<meta property="article:modified_time" content="2020-11-04T02:11:43.584Z">
 <meta property="article:author" content="cozy">
-<meta property="article:tag" content="dp">
-<meta property="article:tag" content="dfs">
 <meta property="article:tag" content="好题">
+<meta property="article:tag" content="combinatorial mathematics">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2020/10/12/ex1.png">
 
-<link rel="canonical" href="http://cozyyy.top/2020/11/01/5555-Count-Sorted-Vowel-Strings/">
+<link rel="canonical" href="http://cozyyy.top/2020/11/02/leetcode-5600-Kth-Smallest-Instructions/">
 
 
 <script id="page-configurations">
@@ -60,7 +63,7 @@
   };
 </script>
 
-  <title>5555. Count Sorted Vowel Strings | Cozy'  Blog</title>
+  <title>leetcode-5600. Kth Smallest Instructions | Cozy'  Blog</title>
   
 
 
@@ -215,7 +218,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://cozyyy.top/2020/11/01/5555-Count-Sorted-Vowel-Strings/">
+    <link itemprop="mainEntityOfPage" href="http://cozyyy.top/2020/11/02/leetcode-5600-Kth-Smallest-Instructions/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
@@ -228,7 +231,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          5555. Count Sorted Vowel Strings
+          leetcode-5600. Kth Smallest Instructions
         </h1>
 
         <div class="post-meta">
@@ -239,14 +242,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-11-01 22:20:38" itemprop="dateCreated datePublished" datetime="2020-11-01T22:20:38+08:00">2020-11-01</time>
+              <time title="创建时间：2020-11-02 17:50:51" itemprop="dateCreated datePublished" datetime="2020-11-02T17:50:51+08:00">2020-11-02</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-02 12:10:35" itemprop="dateModified" datetime="2020-11-02T12:10:35+08:00">2020-11-02</time>
+                <time title="修改时间：2020-11-04 10:11:43" itemprop="dateModified" datetime="2020-11-04T10:11:43+08:00">2020-11-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,8 +277,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/11/01/5555-Count-Sorted-Vowel-Strings/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/01/5555-Count-Sorted-Vowel-Strings/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/11/02/leetcode-5600-Kth-Smallest-Instructions/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/02/leetcode-5600-Kth-Smallest-Instructions/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -285,7 +288,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
+              <span>2.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -304,27 +307,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h4 id="5555-Count-Sorted-Vowel-Strings"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-sorted-vowel-strings/">5555. Count Sorted Vowel Strings</a></h4>
+        <h4 id="5600-Kth-Smallest-Instructions"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-smallest-instructions/">5600. Kth Smallest Instructions</a></h4>
 <a id="more"></a>
-<p>&#x96BE;&#x5EA6;&#x4E2D;&#x7B49;8</p>
-<p>Given an integer <code>n</code>, return <em>the number of strings of length</em> <code>n</code> <em>that consist only of vowels (</em><code>a</code><em>,</em> <code>e</code><em>,</em> <code>i</code><em>,</em> <code>o</code><em>,</em> <code>u</code><em>) and are <strong>lexicographically sorted</strong>.</em></p>
-<p>A string <code>s</code> is <strong>lexicographically sorted</strong> if for all valid <code>i</code>, <code>s[i]</code> is the same as or comes before <code>s[i+1]</code> in the alphabet.</p>
+<p>&#x96BE;&#x5EA6;&#x56F0;&#x96BE;14</p>
+<p>Bob is standing at cell <code>(0, 0)</code>, and he wants to reach <code>destination</code>: <code>(row, column)</code>. He can only travel <strong>right</strong> and <strong>down</strong>. You are going to help Bob by providing <strong>instructions</strong> for him to reach <code>destination</code>.</p>
+<p>The <strong>instructions</strong> are represented as a string, where each character is either:</p>
+<ul>
+<li><code>&apos;H&apos;</code>, meaning move horizontally (go <strong>right</strong>), or</li>
+<li><code>&apos;V&apos;</code>, meaning move vertically (go <strong>down</strong>).</li>
+</ul>
+<p>Multiple <strong>instructions</strong> will lead Bob to <code>destination</code>. For example, if <code>destination</code> is <code>(2, 3)</code>, both <code>&quot;HHHVV&quot;</code> and <code>&quot;HVHVH&quot;</code> are valid <strong>instructions</strong>.</p>
+<p>However, Bob is very picky. Bob has a lucky number <code>k</code>, and he wants the <code>kth</code> <strong>lexicographically smallest instructions</strong> that will lead him to <code>destination</code>. <code>k</code> is <strong>1-indexed</strong>.</p>
+<p>Given an integer array <code>destination</code> and an integer <code>k</code>, return <em>the</em> <code>kth</code><em><strong>lexicographically smallest instructions</strong> that will take Bob to</em> <code>destination</code>.</p>
 <p><strong>Example 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: n = 1</span><br><span class="line">Output: 5</span><br><span class="line">Explanation: The 5 sorted strings that consist of vowels only are [&quot;a&quot;,&quot;e&quot;,&quot;i&quot;,&quot;o&quot;,&quot;u&quot;].</span><br></pre></td></tr></table></figure>
+<p><img src="https://assets.leetcode.com/uploads/2020/10/12/ex1.png" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: destination = [2,3], k = 1</span><br><span class="line">Output: &quot;HHHVV&quot;</span><br><span class="line">Explanation: All the instructions that reach (2, 3) in lexicographic order are as follows:</span><br><span class="line">[&quot;HHHVV&quot;, &quot;HHVHV&quot;, &quot;HHVVH&quot;, &quot;HVHHV&quot;, &quot;HVHVH&quot;, &quot;HVVHH&quot;, &quot;VHHHV&quot;, &quot;VHHVH&quot;, &quot;VHVHH&quot;, &quot;VVHHH&quot;].</span><br></pre></td></tr></table></figure>
 <p><strong>Example 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: n = 2</span><br><span class="line">Output: 15</span><br><span class="line">Explanation: The 15 sorted strings that consist of vowels only are</span><br><span class="line">[&quot;aa&quot;,&quot;ae&quot;,&quot;ai&quot;,&quot;ao&quot;,&quot;au&quot;,&quot;ee&quot;,&quot;ei&quot;,&quot;eo&quot;,&quot;eu&quot;,&quot;ii&quot;,&quot;io&quot;,&quot;iu&quot;,&quot;oo&quot;,&quot;ou&quot;,&quot;uu&quot;].</span><br><span class="line">Note that &quot;ea&quot; is not a valid string since &apos;e&apos; comes after &apos;a&apos; in the alphabet.</span><br></pre></td></tr></table></figure>
+<p><strong><img src="https://assets.leetcode.com/uploads/2020/10/12/ex2.png" alt="img"></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: destination = [2,3], k = 2</span><br><span class="line">Output: &quot;HHVHV&quot;</span><br></pre></td></tr></table></figure>
 <p><strong>Example 3:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: n = 33</span><br><span class="line">Output: 66045</span><br></pre></td></tr></table></figure>
+<p><strong><img src="https://assets.leetcode.com/uploads/2020/10/12/ex3.png" alt="img"></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: destination = [2,3], k = 3</span><br><span class="line">Output: &quot;HHVVH&quot;</span><br></pre></td></tr></table></figure>
 <p><strong>Constraints:</strong></p>
 <ul>
-<li><code>1 &lt;= n &lt;= 50</code></li>
+<li><code>destination.length == 2</code></li>
+<li><code>1 &lt;= row, column &lt;= 15</code></li>
+<li><code>1 &lt;= k &lt;= nCr(row + column, row)</code>, where <code>nCr(a, b)</code> denotes <code>a</code> choose <code>b</code>.</li>
 </ul>
-<h4 id="font-color-red-my-solution-font"><font color="red"> my solution</font></h4>
-<p>&#x66B4;&#x529B;<code>dfs</code></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;tmp;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countVowelStrings</span><span class="params">(<span class="keyword">int</span> n)</span> </span>{</span><br><span class="line">    	fun(n,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    	<span class="keyword">return</span> cnt;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> times,<span class="keyword">int</span> last)</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">    	<span class="keyword">if</span>(times==n)</span><br><span class="line">    	{</span><br><span class="line">    		<span class="keyword">for</span>(<span class="keyword">auto</span> x:tmp)</span><br><span class="line">    			<span class="built_in">cout</span>&lt;&lt;x&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">    		<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    		cnt++;<span class="keyword">return</span> ;</span><br><span class="line">    	}</span><br><span class="line">    	<span class="keyword">else</span></span><br><span class="line">    	{</span><br><span class="line">    		<span class="keyword">for</span>(<span class="keyword">int</span> i=last;i&lt;<span class="number">5</span>;++i)</span><br><span class="line">    		{</span><br><span class="line">    			tmp.push_back(i);</span><br><span class="line">    			fun(n,times+<span class="number">1</span>,i);</span><br><span class="line">    			tmp.pop_back();</span><br><span class="line">    		}</span><br><span class="line">    	}</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
-<h4 id="darao&#x2019;s-solution">darao&#x2019;s solution</h4>
-<p>&#x6211;&#x5176;&#x5B9E;&#x4E5F;&#x89C9;&#x5F97;&#x6709;&#x66F4;&#x7B80;&#x5355;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x662F;&#x56E0;&#x4E3A;&#x6BD4;&#x8D5B;&#x6CA1;&#x6709;&#x4ED4;&#x7EC6;&#x53BB;&#x60F3;&#xFF0C;&#x8FD8;&#x5F97;&#x591A;&#x7EC3;&#x54CE;</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">countVowelStrings</span><span class="params">(<span class="keyword">int</span> n)</span> </span>{</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">6</span>][n+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">6</span>; ++i){</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;=n; ++j){</span><br><span class="line">                <span class="keyword">if</span>(i == <span class="number">0</span>) dp[i][j] = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(j == <span class="number">0</span>) dp[i][j] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(i!= <span class="number">0</span> &amp;&amp; j!=<span class="number">0</span>){</span><br><span class="line">                    dp[i][j] = dp[i][j<span class="number">-1</span>] +dp[i<span class="number">-1</span>][j];</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">5</span>][n];</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p><font color="red">solution</font></p>
+<p>&#x4E00;&#x9053;&#x7EC4;&#x5408;&#x6570;&#x5B66;&#x7684;&#x9898;</p>
+<p><em>c</em>[<em>n</em>][<em>k</em>]=<em>c</em>[<em>n</em>&#x2212;1][<em>k</em>&#x2212;1]+<em>c</em>[<em>n</em>&#x2212;1][<em>k</em>]</p>
+<p>&#xB7;&#xB7;&#xB7;</p>
+<p>&#x5224;&#x65AD;K&#x6709;&#x6CA1;&#x6709;&#x6BD4;H&#x5F00;&#x5934;&#x7684;&#x5B50;&#x5E8F;&#x5217;&#x6570;&#x76EE;&#x5927;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x90A3;&#x4E48;&#x5C31;&#x662F;&#x4EE5;H&#x5F00;&#x5934;&#xFF0C;&#x7136;&#x540E;&#x5F80;&#x540E;&#x79FB;&#x52A8;&#x4E00;&#x4F4D;</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> com[<span class="number">40</span>][<span class="number">20</span>];</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        com[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">30</span>;++i)</span><br><span class="line">        {</span><br><span class="line">            com[i][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">15</span>;++j)</span><br><span class="line">                com[i][j]=com[i<span class="number">-1</span>][j<span class="number">-1</span>]+com[i<span class="number">-1</span>][j];</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">kthSmallestPath</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; destination, <span class="keyword">int</span> k)</span> </span>{</span><br><span class="line">            <span class="keyword">int</span> x=destination[<span class="number">0</span>],y=destination[<span class="number">1</span>];<span class="comment">//v,h</span></span><br><span class="line">            init();</span><br><span class="line">            <span class="built_in">string</span> str=<span class="string">&quot;&quot;</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>,imax=x+y;i&lt;imax;++i)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">if</span>(y&gt;<span class="number">0</span>)</span><br><span class="line">                {</span><br><span class="line">                    <span class="keyword">int</span> cnt=com[x+y<span class="number">-1</span>][y<span class="number">-1</span>];</span><br><span class="line">                    <span class="keyword">if</span>(k&gt;cnt)</span><br><span class="line">                    {</span><br><span class="line">                        str+=<span class="string">&apos;V&apos;</span>;</span><br><span class="line">                        x--;</span><br><span class="line">                        k-=cnt;</span><br><span class="line">                    }</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                    {</span><br><span class="line">                        str+=<span class="string">&apos;H&apos;</span>;</span><br><span class="line">                        y--;</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                {</span><br><span class="line">                        str+=<span class="string">&apos;V&apos;</span>;</span><br><span class="line">                        x--;</span><br><span class="line">                }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -349,7 +364,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://cozyyy.top/2020/11/01/5555-Count-Sorted-Vowel-Strings/" title="5555. Count Sorted Vowel Strings">http://cozyyy.top/2020/11/01/5555-Count-Sorted-Vowel-Strings/</a>
+    <a href="http://cozyyy.top/2020/11/02/leetcode-5600-Kth-Smallest-Instructions/" title="leetcode-5600. Kth Smallest Instructions">http://cozyyy.top/2020/11/02/leetcode-5600-Kth-Smallest-Instructions/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -360,9 +375,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/dp/" rel="tag"># dp</a>
-              <a href="/tags/dfs/" rel="tag"># dfs</a>
               <a href="/tags/%E5%A5%BD%E9%A2%98/" rel="tag"># 好题</a>
+              <a href="/tags/combinatorial-mathematics/" rel="tag"># combinatorial mathematics</a>
           </div>
 
         
@@ -371,12 +385,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/11/01/5554-Check-Array-Formation-Through-Concatenation/" rel="prev" title="5554. Check Array Formation Through Concatenation">
-      <i class="fa fa-chevron-left"></i> 5554. Check Array Formation Through Concatenation
+    <a href="/2020/11/02/Atrick/" rel="prev" title="Atrick">
+      <i class="fa fa-chevron-left"></i> Atrick
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/11/02/5556-Furthest-Building-You-Can-Reach/" rel="next" title="5556. Furthest Building You Can Reach">
-      5556. Furthest Building You Can Reach <i class="fa fa-chevron-right"></i>
+    <a href="/2020/11/02/CHAPTER-3/" rel="next" title="PYTHON-CHAPTER 3">
+      PYTHON-CHAPTER 3 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -437,7 +451,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#5555-Count-Sorted-Vowel-Strings"><span class="nav-text">5555. Count Sorted Vowel Strings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#font-color-red-my-solution-font"><span class="nav-text"> my solution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#darao&#x2019;s-solution"><span class="nav-text">darao&amp;#x2019;s solution</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#5600-Kth-Smallest-Instructions"><span class="nav-text">5600. Kth Smallest Instructions</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -453,7 +467,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -516,13 +530,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">51k</span>
+    <span title="站点总字数">50k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">46 分钟</span>
+    <span title="站点阅读时长">45 分钟</span>
 </div>
 
         

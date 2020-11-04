@@ -32,19 +32,20 @@
     var CONFIG = {"hostname":"cozyyy.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":100,"offset":20,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":false,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
   
-  <meta name="description" content="123title: &amp;#x6D1B;&amp;#x8C37;-P1216-Number Trianglestag: dpcategories: &amp;#x6D1B;&amp;#x8C37; description &amp;#x89C2;&amp;#x5BDF;&amp;#x4E0B;&amp;#x9762;&amp;#x7684;&amp;#x6570;&amp;#x5B57;&amp;#x91D1;&amp;#x5B57;&amp;#x5854;&amp;#x3002; &amp;#x5199;&amp;#x4E0">
+  <meta name="description" content="57. Insert Interval">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Cozy&#39;  Blog">
-<meta property="og:url" content="http://cozyyy.top/2020/10/26/%E6%B4%9B%E8%B0%B7-P1216-Number%20Triangles/index.html">
+<meta property="og:title" content="leetcode-57. 插入区间">
+<meta property="og:url" content="http://cozyyy.top/2020/11/04/leetcode-57-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/index.html">
 <meta property="og:site_name" content="Cozy&#39;  Blog">
-<meta property="og:description" content="123title: &amp;#x6D1B;&amp;#x8C37;-P1216-Number Trianglestag: dpcategories: &amp;#x6D1B;&amp;#x8C37; description &amp;#x89C2;&amp;#x5BDF;&amp;#x4E0B;&amp;#x9762;&amp;#x7684;&amp;#x6570;&amp;#x5B57;&amp;#x91D1;&amp;#x5B57;&amp;#x5854;&amp;#x3002; &amp;#x5199;&amp;#x4E0">
+<meta property="og:description" content="57. Insert Interval">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-26T03:13:26.244Z">
-<meta property="article:modified_time" content="2020-11-03T04:33:18.250Z">
+<meta property="article:published_time" content="2020-11-04T02:00:01.000Z">
+<meta property="article:modified_time" content="2020-11-04T02:10:42.203Z">
 <meta property="article:author" content="cozy">
+<meta property="article:tag" content="sort">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://cozyyy.top/2020/10/26/%E6%B4%9B%E8%B0%B7-P1216-Number%20Triangles/">
+<link rel="canonical" href="http://cozyyy.top/2020/11/04/leetcode-57-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/">
 
 
 <script id="page-configurations">
@@ -57,7 +58,7 @@
   };
 </script>
 
-  <title> | Cozy'  Blog</title>
+  <title>leetcode-57. 插入区间 | Cozy'  Blog</title>
   
 
 
@@ -212,7 +213,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://cozyyy.top/2020/10/26/%E6%B4%9B%E8%B0%B7-P1216-Number%20Triangles/">
+    <link itemprop="mainEntityOfPage" href="http://cozyyy.top/2020/11/04/leetcode-57-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
@@ -225,7 +226,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          leetcode-57. 插入区间
         </h1>
 
         <div class="post-meta">
@@ -235,16 +236,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-10-26 11:13:26" itemprop="dateCreated datePublished" datetime="2020-10-26T11:13:26+08:00">2020-10-26</time>
+              <time title="创建时间：2020-11-04 10:00:01 / 修改时间：10:10:42" itemprop="dateCreated datePublished" datetime="2020-11-04T10:00:01+08:00">2020-11-04</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-03 12:33:18" itemprop="dateModified" datetime="2020-11-03T12:33:18+08:00">2020-11-03</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode/" itemprop="url" rel="index"><span itemprop="name">leetcode</span></a>
+                </span>
+            </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -262,8 +266,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/10/26/%E6%B4%9B%E8%B0%B7-P1216-Number%20Triangles/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/26/%E6%B4%9B%E8%B0%B7-P1216-Number%20Triangles/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/11/04/leetcode-57-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/04/leetcode-57-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -273,7 +277,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>855</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -292,32 +296,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">&#x6D1B;&#x8C37;-P1216-Number</span> <span class="string">Triangles</span></span><br><span class="line"><span class="attr">tag:</span> <span class="string">dp</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">&#x6D1B;&#x8C37;</span></span><br></pre></td></tr></table></figure>
-<h2 id="description">description</h2>
-<p>&#x89C2;&#x5BDF;&#x4E0B;&#x9762;&#x7684;&#x6570;&#x5B57;&#x91D1;&#x5B57;&#x5854;&#x3002;</p>
-<p>&#x5199;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x6765;&#x67E5;&#x627E;&#x4ECE;&#x6700;&#x9AD8;&#x70B9;&#x5230;&#x5E95;&#x90E8;&#x4EFB;&#x610F;&#x5904;&#x7ED3;&#x675F;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x4F7F;&#x8DEF;&#x5F84;&#x7ECF;&#x8FC7;&#x6570;&#x5B57;&#x7684;&#x548C;&#x6700;&#x5927;&#x3002;&#x6BCF;&#x4E00;&#x6B65;&#x53EF;&#x4EE5;&#x8D70;&#x5230;&#x5DE6;&#x4E0B;&#x65B9;&#x7684;&#x70B9;&#x4E5F;&#x53EF;&#x4EE5;&#x5230;&#x8FBE;&#x53F3;&#x4E0B;&#x65B9;&#x7684;&#x70B9;&#x3002;</p>
+        <h4 id="57-Insert-Interval"><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/insert-interval/">57. Insert Interval</a></h4>
 <a id="more"></a>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">        <span class="number">7</span> </span><br><span class="line">      <span class="number">3</span>   <span class="number">8</span> </span><br><span class="line">    <span class="number">8</span>   <span class="number">1</span>   <span class="number">0</span> </span><br><span class="line">  <span class="number">2</span>   <span class="number">7</span>   <span class="number">4</span>   <span class="number">4</span> </span><br><span class="line"><span class="number">4</span>   <span class="number">5</span>   <span class="number">2</span>   <span class="number">6</span>   <span class="number">5</span> </span><br></pre></td></tr></table></figure>
-<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x6837;&#x4F8B;&#x4E2D;,&#x4ECE; 7&#x2192;3&#x2192;8&#x2192;7&#x2192;5 &#x7684;&#x8DEF;&#x5F84;&#x4EA7;&#x751F;&#x4E86;&#x6700;&#x5927;</p>
-<h2 id="input">input</h2>
-<p>&#x7B2C;&#x4E00;&#x4E2A;&#x884C;&#x4E00;&#x4E2A;&#x6B63;&#x6574;&#x6570; <em>r</em> ,&#x8868;&#x793A;&#x884C;&#x7684;&#x6570;&#x76EE;&#x3002;</p>
-<p>&#x540E;&#x9762;&#x6BCF;&#x884C;&#x4E3A;&#x8FD9;&#x4E2A;&#x6570;&#x5B57;&#x91D1;&#x5B57;&#x5854;&#x7279;&#x5B9A;&#x884C;&#x5305;&#x542B;&#x7684;&#x6574;&#x6570;&#x3002;</p>
-<h2 id="output">output</h2>
-<p>&#x5355;&#x72EC;&#x7684;&#x4E00;&#x884C;,&#x5305;&#x542B;&#x90A3;&#x4E2A;&#x53EF;&#x80FD;&#x5F97;&#x5230;&#x7684;&#x6700;&#x5927;&#x7684;&#x548C;&#x3002;</p>
-<h2 id="example">example</h2>
-<p><strong>&#x8F93;&#x5165; #1</strong>&#x590D;&#x5236;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">7</span><br><span class="line">3 8</span><br><span class="line">8 1 0</span><br><span class="line">2 7 4 4</span><br><span class="line">4 5 2 6 5 </span><br></pre></td></tr></table></figure>
-<p><strong>&#x8F93;&#x51FA; #1</strong>&#x590D;&#x5236;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">30</span><br></pre></td></tr></table></figure>
-<h2 id="hint">hint</h2>
-<p>&#x3010;&#x6570;&#x636E;&#x8303;&#x56F4;&#x3011;<br>
-&#x5BF9;&#x4E8E;100% &#x7684;&#x6570;&#x636E;&#xFF0C;1&#x2264;<em>r</em>&#x2264;1000&#xFF0C;&#x6240;&#x6709;&#x8F93;&#x5165;&#x5728; [0,100][0,100] &#x8303;&#x56F4;&#x5185;&#x3002;</p>
-<p>&#x9898;&#x76EE;&#x7FFB;&#x8BD1;&#x6765;&#x81EA;NOCOW&#x3002;</p>
-<p>USACO Training Section 1.5</p>
-<p>IOI1994 Day1T1</p>
-<h2 id="solution">solution</h2>
-<p><code>&#x7B80;&#x5355;dp</code></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 1005</span></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> maze[maxn][maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=i;++j)</span><br><span class="line">		{</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;maze[i][j];</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">1</span>){<span class="built_in">cout</span>&lt;&lt;maze[<span class="number">0</span>][<span class="number">0</span>];<span class="keyword">return</span> <span class="number">0</span>;}</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-2</span>;i&gt;=<span class="number">0</span>;--i)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=i;j++)</span><br><span class="line">			maze[i][j]+=max(maze[i+<span class="number">1</span>][j],maze[i+<span class="number">1</span>][j+<span class="number">1</span>]);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;maze[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x96BE;&#x5EA6;&#x56F0;&#x96BE;246</p>
+<p>Given a set of <em>non-overlapping</em> intervals, insert a new interval into the intervals (merge if necessary).</p>
+<p>You may assume that the intervals were initially sorted according to their start times.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: intervals = [[1,3],[6,9]], newInterval = [2,5]</span><br><span class="line">Output: [[1,5],[6,9]]</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]</span><br><span class="line">Output: [[1,2],[3,10],[12,16]]</span><br><span class="line">Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].</span><br></pre></td></tr></table></figure>
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: intervals = [], newInterval = [5,7]</span><br><span class="line">Output: [[5,7]]</span><br></pre></td></tr></table></figure>
+<p><strong>Example 4:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: intervals = [[1,5]], newInterval = [2,3]</span><br><span class="line">Output: [[1,5]]</span><br></pre></td></tr></table></figure>
+<p><strong>Example 5:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: intervals = [[1,5]], newInterval = [2,7]</span><br><span class="line">Output: [[1,7]]</span><br></pre></td></tr></table></figure>
+<p><font color="red">solution </font></p>
+<p>a&#x4E86;&#x4E00;&#x9053;hard&#x9898;&#xFF0C;&#x5F88;&#x8212;&#x670D;&#xFF0C;&#x611F;&#x89C9;&#x4E0D;&#x662F;&#x5F88;&#x96BE;</p>
+<ol>
+<li>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#x5148;&#x628A;<code>newInterval</code>&#x63D2;&#x5165;&#x5230;<code>intervals</code>&#x4E2D;&#xFF0C;&#x518D;&#x6309;&#x6BCF;&#x4E2A;&#x95F4;&#x9694;&#x7684;&#x8D77;&#x59CB;&#x70B9;&#x6709;&#x5C0F;&#x5230;&#x5927;&#x6392;&#x5E8F;</p>
+</li>
+<li>
+<p>&#x7136;&#x540E;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x4E00;&#x4E2A;&#x70B9;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x878D;&#x5408;&#x591A;&#x4E2A;&#x533A;&#x95F4;&#xFF0C;&#x9700;&#x8981;&#x7528;&#x4E2A;<code>imax</code>&#x4FDD;&#x5B58;&#x8FD9;&#x51E0;&#x4E2A;&#x533A;&#x95F4;&#x4E2D;&#x6700;&#x5927;&#x7684;&#x7EC8;&#x70B9;</p>
+<p>&#x4F8B;&#x5982; <code>[1,4] [3,10] [5,8]</code> &#x90A3;&#x4E48;imax=10</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">insert</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; intervals, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; newInterval)</span> </span>{</span><br><span class="line"></span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;tmp;</span><br><span class="line">            intervals.push_back(newInterval);</span><br><span class="line">            sort(intervals.begin(),intervals.end(),cmp);</span><br><span class="line">            <span class="keyword">bool</span> lastpush=<span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;intervals.size()<span class="number">-1</span>;++i)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">int</span> a=i;</span><br><span class="line">                <span class="keyword">int</span> imax=intervals[i][<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">while</span>(i&lt;intervals.size()<span class="number">-1</span>&amp;&amp;imax&gt;=intervals[i+<span class="number">1</span>][<span class="number">0</span>])</span><br><span class="line">                {</span><br><span class="line">                    i++;</span><br><span class="line">                    imax=max(imax,intervals[i][<span class="number">1</span>]);</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">if</span>(i==intervals.size()<span class="number">-1</span>)lastpush=<span class="literal">true</span>;</span><br><span class="line">                tmp.push_back({intervals[a][<span class="number">0</span>],imax});</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">if</span>(lastpush==<span class="literal">false</span>)tmp.push_back(intervals[intervals.size()<span class="number">-1</span>]);</span><br><span class="line">            <span class="keyword">return</span> tmp;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;a,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;b)</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="keyword">return</span> a[<span class="number">0</span>]&lt;b[<span class="number">0</span>];</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
     </div>
 
@@ -342,7 +347,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://cozyyy.top/2020/10/26/%E6%B4%9B%E8%B0%B7-P1216-Number%20Triangles/" title="">http://cozyyy.top/2020/10/26/洛谷-P1216-Number Triangles/</a>
+    <a href="http://cozyyy.top/2020/11/04/leetcode-57-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/" title="leetcode-57. 插入区间">http://cozyyy.top/2020/11/04/leetcode-57-插入区间/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -352,6 +357,9 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/sort/" rel="tag"># sort</a>
+          </div>
 
         
 
@@ -359,13 +367,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/10/25/%E6%B4%9B%E8%B0%B7-P1434-%E6%BB%91%E9%9B%AA/" rel="prev" title="洛谷 P1434 滑雪">
-      <i class="fa fa-chevron-left"></i> 洛谷 P1434 滑雪
+    <a href="/2020/11/03/%E6%B4%9B%E8%B0%B7-P1094-Souvenir-Section/" rel="prev" title="洛谷-P1094 Souvenir Section">
+      <i class="fa fa-chevron-left"></i> 洛谷-P1094 Souvenir Section
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/10/26/%E6%B4%9B%E8%B0%B7-P1216-number-triangles/" rel="next" title="洛谷-P1216-number triangles">
-      洛谷-P1216-number triangles <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -425,7 +430,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#description"><span class="nav-text">description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#input"><span class="nav-text">input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#output"><span class="nav-text">output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-text">example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hint"><span class="nav-text">hint</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution"><span class="nav-text">solution</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#57-Insert-Interval"><span class="nav-text">57. Insert Interval</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -441,7 +446,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -504,13 +509,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">51k</span>
+    <span title="站点总字数">50k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">46 分钟</span>
+    <span title="站点阅读时长">45 分钟</span>
 </div>
 
         
