@@ -29,6 +29,44 @@
   </entry>
   <entry>
     <title>leetcode-57. 插入区间</title>
+    <url>/2020/11/04/57-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/</url>
+    <content><![CDATA[<h4 id="57-Insert-Interval"><a href="https://leetcode-cn.com/problems/insert-interval/">57. Insert Interval</a></h4>
+<a id="more"></a>
+<p>&#x96BE;&#x5EA6;&#x56F0;&#x96BE;246</p>
+<p>Given a set of <em>non-overlapping</em> intervals, insert a new interval into the intervals (merge if necessary).</p>
+<p>You may assume that the intervals were initially sorted according to their start times.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: intervals = [[1,3],[6,9]], newInterval = [2,5]</span><br><span class="line">Output: [[1,5],[6,9]]</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]</span><br><span class="line">Output: [[1,2],[3,10],[12,16]]</span><br><span class="line">Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].</span><br></pre></td></tr></table></figure>
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: intervals = [], newInterval = [5,7]</span><br><span class="line">Output: [[5,7]]</span><br></pre></td></tr></table></figure>
+<p><strong>Example 4:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: intervals = [[1,5]], newInterval = [2,3]</span><br><span class="line">Output: [[1,5]]</span><br></pre></td></tr></table></figure>
+<p><strong>Example 5:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: intervals = [[1,5]], newInterval = [2,7]</span><br><span class="line">Output: [[1,7]]</span><br></pre></td></tr></table></figure>
+<p><font color="red">solution </font></p>
+<p>a&#x4E86;&#x4E00;&#x9053;hard&#x9898;&#xFF0C;&#x5F88;&#x8212;&#x670D;&#xFF0C;&#x611F;&#x89C9;&#x4E0D;&#x662F;&#x5F88;&#x96BE;</p>
+<ol>
+<li>
+<p>&#x7B2C;&#x4E00;&#x6B65;&#x5148;&#x628A;<code>newInterval</code>&#x63D2;&#x5165;&#x5230;<code>intervals</code>&#x4E2D;&#xFF0C;&#x518D;&#x6309;&#x6BCF;&#x4E2A;&#x95F4;&#x9694;&#x7684;&#x8D77;&#x59CB;&#x70B9;&#x6709;&#x5C0F;&#x5230;&#x5927;&#x6392;&#x5E8F;</p>
+</li>
+<li>
+<p>&#x7136;&#x540E;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x4E00;&#x4E2A;&#x70B9;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x878D;&#x5408;&#x591A;&#x4E2A;&#x533A;&#x95F4;&#xFF0C;&#x9700;&#x8981;&#x7528;&#x4E2A;<code>imax</code>&#x4FDD;&#x5B58;&#x8FD9;&#x51E0;&#x4E2A;&#x533A;&#x95F4;&#x4E2D;&#x6700;&#x5927;&#x7684;&#x7EC8;&#x70B9;</p>
+<p>&#x4F8B;&#x5982; <code>[1,4] [3,10] [5,8]</code> &#x90A3;&#x4E48;imax=10</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">insert</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; intervals, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; newInterval)</span> </span>{</span><br><span class="line"></span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;tmp;</span><br><span class="line">            intervals.push_back(newInterval);</span><br><span class="line">            sort(intervals.begin(),intervals.end(),cmp);</span><br><span class="line">            <span class="keyword">bool</span> lastpush=<span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;intervals.size()<span class="number">-1</span>;++i)</span><br><span class="line">            {</span><br><span class="line">                <span class="keyword">int</span> a=i;</span><br><span class="line">                <span class="keyword">int</span> imax=intervals[i][<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">while</span>(i&lt;intervals.size()<span class="number">-1</span>&amp;&amp;imax&gt;=intervals[i+<span class="number">1</span>][<span class="number">0</span>])</span><br><span class="line">                {</span><br><span class="line">                    i++;</span><br><span class="line">                    imax=max(imax,intervals[i][<span class="number">1</span>]);</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">if</span>(i==intervals.size()<span class="number">-1</span>)lastpush=<span class="literal">true</span>;</span><br><span class="line">                tmp.push_back({intervals[a][<span class="number">0</span>],imax});</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">if</span>(lastpush==<span class="literal">false</span>)tmp.push_back(intervals[intervals.size()<span class="number">-1</span>]);</span><br><span class="line">            <span class="keyword">return</span> tmp;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;a,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;b)</span></span></span><br><span class="line"><span class="function">    </span>{</span><br><span class="line">        <span class="keyword">return</span> a[<span class="number">0</span>]&lt;b[<span class="number">0</span>];</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>sort</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>leetcode-57. 插入区间</title>
     <url>/2020/11/04/leetcode-57-%E6%8F%92%E5%85%A5%E5%8C%BA%E9%97%B4/</url>
     <content><![CDATA[<h4 id="57-Insert-Interval"><a href="https://leetcode-cn.com/problems/insert-interval/">57. Insert Interval</a></h4>
 <a id="more"></a>
@@ -146,7 +184,56 @@
   <entry>
     <title>PYTHON-CHAPTER 3</title>
     <url>/2020/11/02/CHAPTER-3/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>String</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+<a id="more"></a>
+<h2 id="Basic-String-Operations">Basic String Operations</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#python&#x4E2D;&#x5355;&#x5F15;&#x53F7;&#x548C;&#x53CC;&#x5F15;&#x53F7;&#x6CA1;&#x533A;&#x522B;</span></span><br><span class="line"><span class="string">&apos;&apos;&apos;</span></span><br><span class="line"><span class="string">%s&#x79F0;&#x4E3A;&#x8F6C;&#x6362;&#x8BF4;&#x660E;&#x7B26;&#xFF0C;&#x6307;&#x51FA;&#x4E86;&#x8981;&#x5C06;&#x503C;&#x63D2;&#x5165;&#x4EC0;&#x4E48;&#x5730;&#x65B9;&#x3002;s&#x610F;&#x5473;&#x7740;&#x5C06;&#x503C;&#x89C6;&#x4E3A;&#x5B57;</span></span><br><span class="line"><span class="string">&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x683C;&#x5F0F;&#x8BBE;&#x7F6E;&#x3002;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x7684;&#x503C;&#x4E0D;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5C06;&#x4F7F;&#x7528;str&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x5176;&#x4ED6;&#x8BF4;&#x660E;&#x7B26;&#x5C06;&#x5BFC;</span></span><br><span class="line"><span class="string">&#x81F4;&#x5176;&#x4ED6;&#x5F62;&#x5F0F;&#x7684;&#x8F6C;&#x6362;&#x3002;&#x4F8B;&#x5982;&#xFF0C;%.3f&#x5C06;&#x503C;&#x7684;&#x683C;&#x5F0F;&#x8BBE;&#x7F6E;&#x4E3A;&#x5305;&#x542B;3&#x4F4D;&#x5C0F;&#x6570;&#x7684;&#x6D6E;&#x70B9;&#x6570;&#x3002;</span></span><br><span class="line"><span class="string">&apos;&apos;&apos;</span></span><br><span class="line">format=<span class="string">&quot;hello ,%.1f.%s enough for ya&quot;</span></span><br><span class="line">values=(<span class="number">1.2345</span>,<span class="string">&apos;summer&apos;</span>)</span><br><span class="line">format%values</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">&quot;{} hit {},{} call the police&quot;</span>.format(<span class="string">&quot;first&quot;</span>,<span class="string">&quot;second&quot;</span>,<span class="string">&quot;third&quot;</span>))</span><br><span class="line"><span class="comment">#The indices need not be in order like this, though.</span></span><br><span class="line">print(<span class="string">&quot;{2} hit {1},{2} call the police&quot;</span>.format(<span class="string">&quot;first&quot;</span>,<span class="string">&quot;second&quot;</span>,<span class="string">&quot;third&quot;</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;{name} is {value}&quot;</span>.format(name=<span class="string">&apos;cozy&apos;</span>,value=<span class="string">&apos;s&apos;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;{n} is {m}&quot;</span>.format(n=<span class="string">&apos;cozy&apos;</span>,m=<span class="string">&apos;s&apos;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#&#x683C;&#x5F0F;&#x8BF4;&#x660E;&#x7B26;&#xFF1A;&#x8DDF;&#x5728;&#x5192;&#x53F7;&#x540E;&#x9762;&#x7684;&#x8868;&#x8FBE;&#x5F0F;</span></span><br><span class="line">print(<span class="string">&apos;{name:b}&apos;</span>.format(name=<span class="number">18</span>))<span class="comment">#binary</span></span><br><span class="line">print(<span class="string">&apos;{name:10}&apos;</span>.format(name=<span class="number">1</span>))</span><br><span class="line">print(<span class="string">&apos;{name:10}&apos;</span>.format(name=<span class="string">&quot;1&quot;</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><font color="red">&#x6570;&#x5B57;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;</font></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&apos;{:010.2f}&apos;</span>.format(<span class="number">3</span>)</span><br><span class="line"><span class="comment">#&#x5BBD;&#x5EA6;&#x4E3A;10&#xFF0C;&#x4E0D;&#x591F;&#x7684;&#x5728;&#x524D;&#x9762;&#x8865;&#x96F6;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">str=<span class="string">&quot;5&quot;</span></span><br><span class="line">str.zfill(<span class="number">4</span>)</span><br><span class="line"><span class="comment">#&#x540C;&#x6837;&#x662F;&#x5BBD;&#x5EA6;</span></span><br></pre></td></tr></table></figure>
+<h2 id="string-method">string method</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#center</span></span><br><span class="line"><span class="string">&quot;hhhhhhh&quot;</span>.center(<span class="number">40</span>,<span class="string">&apos;-&apos;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#find</span></span><br><span class="line"><span class="comment">#&#x65B9;&#x6CD5;find&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x67E5;&#x627E;&#x5B50;&#x4E32;&#x3002;&#x5982;&#x679C;&#x627E;&#x5230;&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;&#x5B50;&#x4E32;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;-1&#x3002;</span></span><br><span class="line"><span class="comment">#STR.find(str,x,y)x&#x8D77;&#x70B9;&#xFF0C;y&#x7EC8;&#x70B9; &#x53EF;&#x7F3A;&#x7701;</span></span><br><span class="line">print(<span class="string">&apos;With a moo-moo here, and a moo-moo there&apos;</span>.find(<span class="string">&apos;moo&apos;</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">str=<span class="string">&apos;With a moo-moo here, and a moo-moo there&apos;</span></span><br><span class="line">len(str)</span><br><span class="line">a=(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">len(a)</span><br><span class="line">index=<span class="number">0</span>+<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> index&lt;len(str):</span><br><span class="line">    tmp=(<span class="string">&apos;With a moo-moo here, and a moo-moo there&apos;</span>.find(<span class="string">&apos;moo&apos;</span>,index))</span><br><span class="line">    <span class="keyword">if</span>(int(tmp)&gt;=<span class="number">0</span>):</span><br><span class="line">        index=tmp+<span class="number">1</span></span><br><span class="line">        print(index)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code>7
+8
+12
+28
+32
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#join &#x7528;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x8FDE;&#x63A5;&#x5E8F;&#x5217;&#x6210;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;</span></span><br><span class="line">str=[<span class="string">&apos;s&apos;</span>,<span class="string">&apos;a&apos;</span>,<span class="string">&apos;b&apos;</span>,<span class="string">&apos;c&apos;</span>]</span><br><span class="line"><span class="string">&apos;+&apos;</span>.join(str)     </span><br></pre></td></tr></table></figure>
+<pre><code>&apos;s+a+b+c&apos;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#in</span></span><br><span class="line">str=[<span class="string">&apos;s&apos;</span>,<span class="string">&apos;a&apos;</span>,<span class="string">&apos;b&apos;</span>,<span class="string">&apos;c&apos;</span>]</span><br><span class="line"><span class="keyword">if</span>(<span class="string">&apos;s&apos;</span><span class="keyword">in</span> str):</span><br><span class="line">    print(<span class="string">&apos;niupi&apos;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>niupi
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#lower </span></span><br><span class="line">str=<span class="string">&quot;DDDDDDDDDDDDDD&quot;</span></span><br><span class="line">str.lower()</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;dddddddddddddd&apos;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#upper</span></span><br><span class="line">str=<span class="string">&apos;aaaaaaaaaa&apos;</span></span><br><span class="line">str.upper()</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;AAAAAAAAAA&apos;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#title &#x8BCD;&#x9996;&#x5927;&#x5199;</span></span><br><span class="line"><span class="string">&quot;that&apos;s all folks&quot;</span>.title()</span><br></pre></td></tr></table></figure>
+<pre><code>&quot;That&apos;S All Folks&quot;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#replace</span></span><br><span class="line"><span class="string">&apos;This is a is test&apos;</span>.replace(<span class="string">&apos;is&apos;</span>, <span class="string">&apos;eez&apos;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;Theez eez a eez test&apos;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#split</span></span><br><span class="line">s=<span class="string">&apos;This is a is test&apos;</span>.split(<span class="string">&apos; &apos;</span>)</span><br><span class="line">s[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+<pre><code>&apos;is&apos;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
   </entry>
   <entry>
     <title>leetcode-5600. Kth Smallest Instructions</title>
