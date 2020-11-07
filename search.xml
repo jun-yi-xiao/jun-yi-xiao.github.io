@@ -28,6 +28,75 @@
 ]]></content>
   </entry>
   <entry>
+    <title>leetcode-122. Best Time to Buy and Sell Stock II</title>
+    <url>/2020/11/07/leetcode-122-Best-Time-to-Buy-and-Sell-Stock-II/</url>
+    <content><![CDATA[<h4 id="122-Best-Time-to-Buy-and-Sell-Stock-II"><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/">122. Best Time to Buy and Sell Stock II</a></h4>
+<a id="more"></a>
+<p>&#x96BE;&#x5EA6;&#x7B80;&#x5355;911</p>
+<p>Say you have an array <code>prices</code> for which the <em>i</em>th element is the price of a given stock on day <em>i</em>.</p>
+<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).</p>
+<p><strong>Note:</strong> You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [7,1,5,3,6,4]</span><br><span class="line">Output: 7</span><br><span class="line">Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.</span><br><span class="line">             Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [1,2,3,4,5]</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.</span><br><span class="line">             Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are</span><br><span class="line">             engaging multiple transactions at the same time. You must sell before buying again.</span><br></pre></td></tr></table></figure>
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: [7,6,4,3,1]</span><br><span class="line">Output: 0</span><br><span class="line">Explanation: In this case, no transaction is done, i.e. max profit = 0.</span><br></pre></td></tr></table></figure>
+<h4 id="font-color-red-solution-font"><font color="red">solution</font></h4>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; prices)</span> </span>{</span><br><span class="line">        <span class="keyword">int</span> index=<span class="number">0</span>,cnt=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(index&lt;prices.size()<span class="number">-1</span>)</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">int</span> imin=INT_MAX;</span><br><span class="line">            <span class="comment">//buy when cheapest in a continuous interval</span></span><br><span class="line">            <span class="keyword">while</span>(index&lt;prices.size()&amp;&amp;prices[index]&lt;imin)  </span><br><span class="line">            {</span><br><span class="line">                imin=prices[index];</span><br><span class="line">                index++;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">if</span>(index==prices.size())<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">int</span> imax=imin;</span><br><span class="line">             <span class="comment">//sell when most expensive in a continuous interval</span></span><br><span class="line">            <span class="keyword">while</span>(index&lt;prices.size()&amp;&amp;prices[index]&gt;imax)</span><br><span class="line">            {</span><br><span class="line">                imax=prices[index];</span><br><span class="line">                index++;</span><br><span class="line">            }</span><br><span class="line">            cnt+=(imax-imin);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>贪心</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>134. Gas Station</title>
+    <url>/2020/11/07/leetcode-134-Gas-Station/</url>
+    <content><![CDATA[<h4 id="134-Gas-Station"><a href="https://leetcode-cn.com/problems/gas-station/">134. Gas Station</a></h4>
+<a id="more"></a>
+<p>There are N gas stations along a circular route, where the amount of gas at station i is gas[i].</p>
+<p>You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to its next station (i+1). You begin the journey with an empty tank at one of the gas stations.</p>
+<p>Return the starting gas station&#x2019;s index if you can travel around the circuit once in the clockwise direction, otherwise return -1.</p>
+<p>Note:</p>
+<p>If there exists a solution, it is guaranteed to be unique.<br>
+Both input arrays are non-empty and have the same length.<br>
+Each element in the input arrays is a non-negative integer.<br>
+Example 1:</p>
+<p>Input:<br>
+gas  = [1,2,3,4,5]<br>
+cost = [3,4,5,1,2]</p>
+<p>Output: 3</p>
+<p>Explanation:<br>
+Start at station 3 (index 3) and fill up with 4 unit of gas. Your tank = 0 + 4 = 4<br>
+Travel to station 4. Your tank = 4 - 1 + 5 = 8<br>
+Travel to station 0. Your tank = 8 - 2 + 1 = 7<br>
+Travel to station 1. Your tank = 7 - 3 + 2 = 6<br>
+Travel to station 2. Your tank = 6 - 4 + 3 = 5<br>
+Travel to station 3. The cost is 5. Your gas is just enough to travel back to station 3.<br>
+Therefore, return 3 as the starting index.<br>
+Example 2:</p>
+<p>Input:<br>
+gas  = [2,3,4]<br>
+cost = [3,4,3]</p>
+<p>Output: -1</p>
+<p>Explanation:<br>
+You can&#x2019;t start at station 0 or 1, as there is not enough gas to travel to the next station.<br>
+Let&#x2019;s start at station 2 and fill up with 4 unit of gas. Your tank = 0 + 4 = 4<br>
+Travel to station 0. Your tank = 4 - 3 + 2 = 3<br>
+Travel to station 1. Your tank = 3 - 3 + 3 = 3<br>
+You cannot travel back to station 2, as it requires 4 unit of gas but you only have 3.<br>
+Therefore, you can&#x2019;t travel around the circuit once no matter where you start.</p>
+<h4 id="solution">solution</h4>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">canCompleteCircuit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; gas, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; cost)</span> </span>{</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;newcost;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;gas.size();++i)newcost.push_back(gas[i]-cost[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;gas.size();++i)newcost.push_back(gas[i]-cost[i]);</span><br><span class="line">        <span class="keyword">int</span> index=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(index&lt;gas.size())</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">while</span>(newcost[index]&lt;<span class="number">0</span>){index++;<span class="keyword">if</span>(index==gas.size())<span class="keyword">return</span> <span class="number">-1</span>;}</span><br><span class="line">            <span class="keyword">int</span> i=index,sum=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(sum&gt;=<span class="number">0</span>)</span><br><span class="line">            {</span><br><span class="line">                sum+=newcost[i],i++;</span><br><span class="line">                <span class="keyword">if</span>(i-index==gas.size()&amp;&amp;sum&gt;=<span class="number">0</span>)<span class="keyword">return</span> index;</span><br><span class="line">            }</span><br><span class="line">            index++;</span><br><span class="line">            </span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">};<span class="class"><span class="keyword">class</span> <span class="title">Solution</span> {</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">canCompleteCircuit</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; gas, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; cost)</span> </span>{</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;newcost;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;gas.size();++i)newcost.push_back(gas[i]-cost[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;gas.size();++i)newcost.push_back(gas[i]-cost[i]);</span><br><span class="line">        <span class="keyword">int</span> index=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(index&lt;gas.size())</span><br><span class="line">        {</span><br><span class="line">            <span class="keyword">while</span>(newcost[index]&lt;<span class="number">0</span>){index++;<span class="keyword">if</span>(index==gas.size())<span class="keyword">return</span> <span class="number">-1</span>;}</span><br><span class="line">            <span class="keyword">int</span> i=index,sum=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(sum&gt;=<span class="number">0</span>)</span><br><span class="line">            {</span><br><span class="line">                sum+=newcost[i],i++;</span><br><span class="line">                <span class="keyword">if</span>(i-index==gas.size()&amp;&amp;sum&gt;=<span class="number">0</span>)<span class="keyword">return</span> index;</span><br><span class="line">            }</span><br><span class="line">            index++;</span><br><span class="line">            </span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>贪心</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>leetcode-45. Jump Game II</title>
     <url>/2020/11/06/leetcode-45-Jump-Game-II/</url>
     <content><![CDATA[<h4 id="45-Jump-Game-II"><a href="https://leetcode-cn.com/problems/jump-game-ii/">45. Jump Game II</a></h4>
@@ -442,8 +511,8 @@
         <category>leetcode</category>
       </categories>
       <tags>
-        <tag>好题</tag>
         <tag>贪心</tag>
+        <tag>好题</tag>
         <tag>top k</tag>
       </tags>
   </entry>
@@ -527,7 +596,18 @@
           </div>
 <p>&#x4E00;&#x4E2A;&#x6682;&#x65F6;&#x6027;&#x548C;&#x666E;&#x904D;&#x6027;&#x7684;&#x95EE;&#x9898;&#x3002;&#x5F88;&#x591A;&#x5730;&#x65B9;&#x90FD;&#x5B58;&#x5728;&#xFF0C;&#x6BD4;&#x5982;&#x4F60;&#x5B66;&#x4E60;&#x597D;&#xFF0C;&#x4F46;&#x662F;&#x67D0;&#x6B21;&#x8003;&#x8BD5;broken&#x4E86;&#xFF0C;&#x8981;&#x544A;&#x8BC9;&#x81EA;&#x5DF1;&#x8FD9;&#x662F;&#x6682;&#x65F6;&#x7684;&#xFF0C;keep moving&#x3002;&#x540C;&#x7406;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x91D1;&#x878D;&#x80FD;&#x529B;&#x4E0D;&#x5F3A;&#xFF0C;&#x4F46;&#x662F;&#x67D0;&#x6B21;&#x6295;&#x8D44;&#x5F88;&#x6210;&#x529F;&#xFF0C;&#x4E5F;&#x8981;&#x544A;&#x8BC9;&#x81EA;&#x5DF1;&#x8FD9;&#x662F;&#x4FA5;&#x5E78;&#x3002;&#x6211;&#x8BA4;&#x4E3A;&#x4F60;&#x7684;&#x80FD;&#x529B;&#x662F;&#x4F60;&#x7684;&#x4EF7;&#x503C;&#xFF0C;&#x4F60;&#x7684;&#x56DE;&#x62A5;&#x662F;&#x4F60;&#x7684;&#x4EF7;&#x683C;&#xFF0C;&#xFF0C;&#x628A;&#x65F6;&#x95F4;&#x62C9;&#x957F;&#x8FDC;&#x4E00;&#x4E9B;&#xFF0C;&#x4EF7;&#x683C;&#x56DE;&#x5FE0;&#x4E8E;&#x4EF7;&#x503C;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x52AA;&#x529B;&#x63D0;&#x5347;&#x81EA;&#x5DF1;&#x7684;&#x80FD;&#x529B;&#x3002;</p>
 <h1>LESSION 1</h1>
-]]></content>
+<div class="note primary">
+            <p>I may sound unkind because I&#x2019;m doing my best to point something out to the two of you.</p>
+          </div>
+<div class="note primary">
+            <p>First, the fear of being without money motivates us to work hard, and then once we get that paycheck, greed or desire starts us thinking about all the wonderful<br>things money can buy.</p>
+          </div>
+<div class="note primary">
+            <p>So many people say, &#x201C;Oh, I&#x2019;m not interested in money.&#x201D; Yet they&#x2019;ll work at a job for<br>eight hours a day.</p>
+          </div>
+<div class="note primary">
+            <p>Rich dad went on to explain that a human&#x2019;s life is a struggle between ignorance and illumination. He explained that once a person stops searching for information and self-knowledge, ignorance sets in. That struggle is a moment-to moment decision&#x2014;to learn to open or close one&#x2019;s mind.</p>
+          </div>]]></content>
       <categories>
         <category>reading note</category>
       </categories>
